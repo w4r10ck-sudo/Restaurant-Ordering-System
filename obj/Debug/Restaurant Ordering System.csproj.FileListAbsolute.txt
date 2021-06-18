@@ -1,0 +1,16 @@
+C:\Users\Taha\source\repos\Restaurant Ordering System\bin\Debug\ROS_DB.mdf
+C:\Users\Taha\source\repos\Restaurant Ordering System\bin\Debug\ROS_DB_log.ldf
+C:\Users\Taha\source\repos\Restaurant Ordering System\bin\Debug\Restaurant Ordering System.exe.config
+C:\Users\Taha\source\repos\Restaurant Ordering System\bin\Debug\Restaurant Ordering System.exe
+C:\Users\Taha\source\repos\Restaurant Ordering System\bin\Debug\Restaurant Ordering System.pdb
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.csproj.AssemblyReference.cache
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.Properties.Resources.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.csproj.GenerateResource.cache
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.csproj.CoreCompileInputs.cache
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.exe
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.pdb
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.Form1.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.adminGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.crashGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.managerGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.outputFormGUI.resources
