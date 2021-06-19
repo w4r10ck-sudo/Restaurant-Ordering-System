@@ -31,6 +31,11 @@ namespace Restaurant_Ordering_System.GUI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dashboardtab = new System.Windows.Forms.TabPage();
+            this.btn_item = new System.Windows.Forms.Button();
+            this.btn_customer = new System.Windows.Forms.Button();
+            this.btn_payment = new System.Windows.Forms.Button();
+            this.btn_Bill = new System.Windows.Forms.Button();
+            this.btn_category = new System.Windows.Forms.Button();
             this.profiletab = new System.Windows.Forms.TabPage();
             this.show_role = new System.Windows.Forms.Label();
             this.show_salary = new System.Windows.Forms.Label();
@@ -39,6 +44,7 @@ namespace Restaurant_Ordering_System.GUI
             this.show_status = new System.Windows.Forms.Label();
             this.show_username = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
+            this.dashboardtab.SuspendLayout();
             this.profiletab.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +61,11 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // dashboardtab
             // 
+            this.dashboardtab.Controls.Add(this.btn_item);
+            this.dashboardtab.Controls.Add(this.btn_customer);
+            this.dashboardtab.Controls.Add(this.btn_payment);
+            this.dashboardtab.Controls.Add(this.btn_Bill);
+            this.dashboardtab.Controls.Add(this.btn_category);
             this.dashboardtab.Location = new System.Drawing.Point(4, 22);
             this.dashboardtab.Name = "dashboardtab";
             this.dashboardtab.Padding = new System.Windows.Forms.Padding(3);
@@ -62,6 +73,52 @@ namespace Restaurant_Ordering_System.GUI
             this.dashboardtab.TabIndex = 0;
             this.dashboardtab.Text = "Dashboard";
             this.dashboardtab.UseVisualStyleBackColor = true;
+            // 
+            // btn_item
+            // 
+            this.btn_item.Location = new System.Drawing.Point(246, 62);
+            this.btn_item.Name = "btn_item";
+            this.btn_item.Size = new System.Drawing.Size(131, 23);
+            this.btn_item.TabIndex = 5;
+            this.btn_item.Text = "Food Item";
+            this.btn_item.UseVisualStyleBackColor = true;
+            // 
+            // btn_customer
+            // 
+            this.btn_customer.Location = new System.Drawing.Point(425, 62);
+            this.btn_customer.Name = "btn_customer";
+            this.btn_customer.Size = new System.Drawing.Size(131, 23);
+            this.btn_customer.TabIndex = 4;
+            this.btn_customer.Text = "Customer";
+            this.btn_customer.UseVisualStyleBackColor = true;
+            // 
+            // btn_payment
+            // 
+            this.btn_payment.Location = new System.Drawing.Point(599, 62);
+            this.btn_payment.Name = "btn_payment";
+            this.btn_payment.Size = new System.Drawing.Size(131, 23);
+            this.btn_payment.TabIndex = 3;
+            this.btn_payment.Text = "Payment";
+            this.btn_payment.UseVisualStyleBackColor = true;
+            // 
+            // btn_Bill
+            // 
+            this.btn_Bill.Location = new System.Drawing.Point(63, 145);
+            this.btn_Bill.Name = "btn_Bill";
+            this.btn_Bill.Size = new System.Drawing.Size(131, 23);
+            this.btn_Bill.TabIndex = 2;
+            this.btn_Bill.Text = "Generate Bill";
+            this.btn_Bill.UseVisualStyleBackColor = true;
+            // 
+            // btn_category
+            // 
+            this.btn_category.Location = new System.Drawing.Point(63, 62);
+            this.btn_category.Name = "btn_category";
+            this.btn_category.Size = new System.Drawing.Size(131, 23);
+            this.btn_category.TabIndex = 0;
+            this.btn_category.Text = "Category Manager";
+            this.btn_category.UseVisualStyleBackColor = true;
+            this.btn_category.Click += new System.EventHandler(this.btn_category_Click);
             // 
             // profiletab
             // 
@@ -140,9 +197,9 @@ namespace Restaurant_Ordering_System.GUI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "managerGUI";
-            this.Text = "managerGUI";
-            this.Load += new System.EventHandler(this.managerGUI_Load);
+            this.Text = "Management";
             this.tabControl1.ResumeLayout(false);
+            this.dashboardtab.ResumeLayout(false);
             this.profiletab.ResumeLayout(false);
             this.profiletab.PerformLayout();
             this.ResumeLayout(false);
@@ -160,5 +217,10 @@ namespace Restaurant_Ordering_System.GUI
         private System.Windows.Forms.Label show_email;
         private System.Windows.Forms.Label show_status;
         private System.Windows.Forms.Label show_username;
+        private System.Windows.Forms.Button btn_category;
+        private System.Windows.Forms.Button btn_item;
+        private System.Windows.Forms.Button btn_customer;
+        private System.Windows.Forms.Button btn_payment;
+        private System.Windows.Forms.Button btn_Bill;
     }
 }

@@ -123,7 +123,6 @@ namespace Restaurant_Ordering_System.DL
             {
                 dbcon.Con.Close();
             }
-            return 0;
         }
         public userDTO findUserFromDb(userDTO udto)
         {

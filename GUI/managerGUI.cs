@@ -28,31 +28,11 @@ namespace Restaurant_Ordering_System.GUI
             show_role.Text = udto.Role;
             show_status.Text = udto.Status;
         }
-        private void managerGUI_Load(object sender, EventArgs e)
-        {/*
-            userDTO udto;
-            try
-            {
-                udto = adminbl.getAdminData();
-                if (udto != null)
-                {
-                    show_username.Text = udto.Username;
-                    show_email.Text = udto.Email;
-                    show_contact.Text = udto.Contact;
-                    show_salary.Text = udto.Salary;
-                    show_role.Text = udto.Role;
-                    show_status.Text = udto.Status;
-                }
-                else
-                {
-                    new outputFormGUI("Something went wrong!").ShowDialog();
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            */
+
+        private void btn_category_Click(object sender, EventArgs e)
+        {
+            categoryGUI catgui = new categoryGUI();
+            catgui.ShowDialog();
         }
-        }
+    }
 }

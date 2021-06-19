@@ -62,21 +62,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\adminBL.cs" />
+    <Compile Include="BL\categoryBL.cs" />
     <Compile Include="BL\EncryptorDecryptor.cs" />
     <Compile Include="BL\loginBL.cs" />
     <Compile Include="BL\managerBL.cs" />
     <Compile Include="BL\userBL.cs" />
     <Compile Include="DL\adminDL.cs" />
+    <Compile Include="DL\categoryDL.cs" />
     <Compile Include="DL\DbConnection.cs" />
     <Compile Include="DL\loginDL.cs" />
+    <Compile Include="DTO\categoryDTO.cs" />
     <Compile Include="DTO\loginDTO.cs" />
-    <Compile Include="DTO\Session.cs" />
     <Compile Include="DTO\userDTO.cs" />
     <Compile Include="GUI\adminGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\adminGUI.Designer.cs">
       <DependentUpon>adminGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\categoryGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\categoryGUI.Designer.cs">
+      <DependentUpon>categoryGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\chefGUI.cs">
       <SubType>Form</SubType>
@@ -118,6 +126,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\adminGUI.resx">
       <DependentUpon>adminGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\categoryGUI.resx">
+      <DependentUpon>categoryGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\crashGUI.resx">
       <DependentUpon>crashGUI.cs</DependentUpon>
