@@ -31,7 +31,7 @@ namespace Restaurant_Ordering_System.GUI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dashboardtab = new System.Windows.Forms.TabPage();
-            this.btn_item = new System.Windows.Forms.Button();
+            this.btn_fooditem = new System.Windows.Forms.Button();
             this.btn_customer = new System.Windows.Forms.Button();
             this.btn_payment = new System.Windows.Forms.Button();
             this.btn_Bill = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // dashboardtab
             // 
-            this.dashboardtab.Controls.Add(this.btn_item);
+            this.dashboardtab.Controls.Add(this.btn_fooditem);
             this.dashboardtab.Controls.Add(this.btn_customer);
             this.dashboardtab.Controls.Add(this.btn_payment);
             this.dashboardtab.Controls.Add(this.btn_Bill);
@@ -74,14 +74,15 @@ namespace Restaurant_Ordering_System.GUI
             this.dashboardtab.Text = "Dashboard";
             this.dashboardtab.UseVisualStyleBackColor = true;
             // 
-            // btn_item
+            // btn_fooditem
             // 
-            this.btn_item.Location = new System.Drawing.Point(246, 62);
-            this.btn_item.Name = "btn_item";
-            this.btn_item.Size = new System.Drawing.Size(131, 23);
-            this.btn_item.TabIndex = 5;
-            this.btn_item.Text = "Food Item";
-            this.btn_item.UseVisualStyleBackColor = true;
+            this.btn_fooditem.Location = new System.Drawing.Point(246, 62);
+            this.btn_fooditem.Name = "btn_fooditem";
+            this.btn_fooditem.Size = new System.Drawing.Size(131, 23);
+            this.btn_fooditem.TabIndex = 5;
+            this.btn_fooditem.Text = "Food Item";
+            this.btn_fooditem.UseVisualStyleBackColor = true;
+            this.btn_fooditem.Click += new System.EventHandler(this.btn_fooditem_Click);
             // 
             // btn_customer
             // 
@@ -218,7 +219,7 @@ namespace Restaurant_Ordering_System.GUI
         private System.Windows.Forms.Label show_status;
         private System.Windows.Forms.Label show_username;
         private System.Windows.Forms.Button btn_category;
-        private System.Windows.Forms.Button btn_item;
+        private System.Windows.Forms.Button btn_fooditem;
         private System.Windows.Forms.Button btn_customer;
         private System.Windows.Forms.Button btn_payment;
         private System.Windows.Forms.Button btn_Bill;

@@ -34,5 +34,11 @@ namespace Restaurant_Ordering_System.GUI
             categoryGUI catgui = new categoryGUI();
             catgui.ShowDialog();
         }
+
+        private void btn_fooditem_Click(object sender, EventArgs e)
+        {
+            foodItemGUI foodgui = new foodItemGUI();
+            foodgui.ShowDialog();
+        }
     }
 }

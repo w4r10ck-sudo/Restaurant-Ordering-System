@@ -20,6 +20,7 @@ namespace Restaurant_Ordering_System.DL
         {
             try
             {
+                dbcon.Con.Open();
                 string queryString = "INSERT INTO FoodItem (name, price, description, category) VALUES(@Name, @Price, @Description, (SELECT category_id FROM Category WHERE name=@Category));";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Name", fooddto.Name);
@@ -43,7 +44,7 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "SELECT FoodItem.name, FoodItem.price, FoodItem.description, Category.name FROM FoodItem INNER JOIN Category ON FoodItem.category = Category.category_id GROUPBY Category.category_id; ";
+                string queryString = "SELECT FoodItem.name, FoodItem.price, FoodItem.description, Category.name as category FROM FoodItem INNER JOIN Category ON FoodItem.category = Category.category_id;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 SqlDataReader reader = com.ExecuteReader();
                 dt.Load(reader);
@@ -63,10 +64,11 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "SELECT FoodItem.name, FoodItem.price, FoodItem.description, Category.name FROM FoodItem INNER JOIN Category ON FoodItem.category = Category.category_id WHERE FoodItem.name = @Name; ";
+                string queryString = "SELECT FoodItem.name, FoodItem.price, FoodItem.description, Category.name as category FROM FoodItem INNER JOIN Category ON FoodItem.category = Category.category_id WHERE FoodItem.name = @Name; ";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Name", fooddto.Name);
                 SqlDataReader reader = com.ExecuteReader();
+                fooddto = new foodItemDTO();
                 if (reader.HasRows)
                 {
                     reader.Read();
@@ -114,9 +116,9 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "Delete FROM FoodItem WHERE name= @Name;";
+                string queryString = "Delete FROM FoodItem WHERE name = @Name;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
-                com.Parameters.AddWithValue("@CatName", fooddto.Name);
+                com.Parameters.AddWithValue("@Name", fooddto.Name);
                 int rowAffected = com.ExecuteNonQuery();
                 return rowAffected;
             }

@@ -368,6 +368,7 @@ namespace Restaurant_Ordering_System.GUI
             this.Controls.Add(this.cat_manager);
             this.Name = "foodItemGUI";
             this.Text = "foodItemGUI";
+            this.Load += new System.EventHandler(this.foodItemGUI_Load);
             this.cat_manager.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

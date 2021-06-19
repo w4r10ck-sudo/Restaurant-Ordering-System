@@ -41,7 +41,6 @@ namespace Restaurant_Ordering_System.BL
             {
                 throw ex;
             }
-            return null;
         }
         public categoryDTO GetCategory(categoryDTO catdto)
         {

@@ -44,8 +44,9 @@ namespace Restaurant_Ordering_System.GUI
             DataTable dt;
             try
             {
-                dt = foodbl.getAllCategories();
+                dt = foodbl.getAllFoodItems();
                 dataGridView1.DataSource = dt;
+                dt = foodbl.getAllCategories();
                 if (txt_foodcat_create.Items.Count > 0 || txt_foodcat_update.Items.Count > 0)
                 {
                     txt_foodcat_create.Items.Clear();
@@ -99,21 +100,22 @@ namespace Restaurant_Ordering_System.GUI
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            foodItemDTO fooditemdto = new foodItemDTO();
-            fooditemdto.Name = txt_foodname_search.Text;
+            fooddto = new foodItemDTO();
+            foodItemDTO fooddto2 = new foodItemDTO();
+            fooddto.Name = txt_foodname_search.Text;
             try
             {
-                fooditemdto = foodbl.GetfoodItem(fooditemdto);
-                if (fooditemdto != null)
+                fooddto2 = foodbl.GetfoodItem(fooddto);
+                if (!object.ReferenceEquals(null, fooddto2))
                 {
-                    txt_foodname_update.Text = fooditemdto.Name;
-                    txt_foodprice_update.Text = fooditemdto.Price;
-                    txt_fooddesc_update.Text = fooditemdto.Description;
-                    txt_foodcat_update.SelectedIndex = txt_foodcat_update.Items.IndexOf(fooditemdto.Category);
+                    txt_foodname_update.Text = fooddto2.Name;
+                    txt_foodprice_update.Text = fooddto2.Price;
+                    txt_fooddesc_update.Text = fooddto2.Description;
+                    txt_foodcat_update.SelectedIndex = txt_foodcat_update.Items.IndexOf(fooddto2.Category);
                 }
                 else
                 {
-                    new outputFormGUI("Something went Wrong..!");
+                    new outputFormGUI("Food Item does not exist!");
                 }
             }
             catch (SqlException ex)
@@ -175,6 +177,11 @@ namespace Restaurant_Ordering_System.GUI
             {
                 new outputFormGUI("Please Enter a valid food Item name..!");
             }
+        }
+
+        private void foodItemGUI_Load(object sender, EventArgs e)
+        {
+            loadData();
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Restaurant_Ordering_System.BL
     class foodItemBL
     {
         foodItemDL fooditemdl = new foodItemDL();
+        categoryDL catdl = new categoryDL();
         public Form createfoodItem(foodItemDTO foodItemdto)
         {
             foodItemdto.Name = foodItemdto.Name.ToLower();
@@ -28,7 +29,7 @@ namespace Restaurant_Ordering_System.BL
                 throw ex;
             }
         }
-        public DataTable getAllCategories()
+        public DataTable getAllFoodItems()
         {
             DataTable dt = new DataTable();
             try
@@ -40,15 +41,28 @@ namespace Restaurant_Ordering_System.BL
             {
                 throw ex;
             }
-            return null;
+        }
+        public DataTable getAllCategories()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = catdl.getAllCatFromDb();
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
         }
         public foodItemDTO GetfoodItem(foodItemDTO foodItemdto)
         {
             try
             {
-                foodItemdto = fooditemdl.getFoodItemFromDb(foodItemdto);
-                if (!string.IsNullOrEmpty(foodItemdto.Description))
-                    return foodItemdto;
+                foodItemDTO fd = new foodItemDTO();
+                fd = fooditemdl.getFoodItemFromDb(foodItemdto);
+                if (!string.IsNullOrEmpty(fd.Description))
+                    return fd;
             }
             catch (SqlException ex)
             {
