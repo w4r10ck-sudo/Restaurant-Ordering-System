@@ -65,7 +65,7 @@ namespace Restaurant_Ordering_System.DL
                 dbcon.Con.Open();
                 string queryString = "UPDATE Payment SET status = @Status WHERE payment_id=@Payment;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
-                com.Parameters.AddWithValue("@Status", paydto.Status);
+                com.Parameters.AddWithValue("@Status", "Paid");
                 com.Parameters.AddWithValue("@Payment", paydto.PaymentId);
                 int rowAffected = com.ExecuteNonQuery();
                 return rowAffected;

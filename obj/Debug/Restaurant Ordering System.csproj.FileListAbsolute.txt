@@ -11,7 +11,6 @@ C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Order
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.pdb
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.Form1.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.adminGUI.resources
-C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.crashGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.managerGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.outputFormGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.categoryGUI.resources
@@ -21,3 +20,5 @@ C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Order
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.ordershistoryGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.paymentGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.chefGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.invoiceGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.waiterGUI.resources

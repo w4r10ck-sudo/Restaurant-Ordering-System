@@ -109,12 +109,6 @@
     <Compile Include="GUI\chefGUI.Designer.cs">
       <DependentUpon>chefGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\crashGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\crashGUI.Designer.cs">
-      <DependentUpon>crashGUI.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\customerGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +120,12 @@
     </Compile>
     <Compile Include="GUI\foodItemGUI.Designer.cs">
       <DependentUpon>foodItemGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\invoiceGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\invoiceGUI.Designer.cs">
+      <DependentUpon>invoiceGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\loginGUI.cs">
       <SubType>Form</SubType>
@@ -180,14 +180,14 @@
     <EmbeddedResource Include="GUI\chefGUI.resx">
       <DependentUpon>chefGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\crashGUI.resx">
-      <DependentUpon>crashGUI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\customerGUI.resx">
       <DependentUpon>customerGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\foodItemGUI.resx">
       <DependentUpon>foodItemGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\invoiceGUI.resx">
+      <DependentUpon>invoiceGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\loginGUI.resx">
       <DependentUpon>loginGUI.cs</DependentUpon>
@@ -206,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\paymentGUI.resx">
       <DependentUpon>paymentGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\waiterGUI.resx">
+      <DependentUpon>waiterGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

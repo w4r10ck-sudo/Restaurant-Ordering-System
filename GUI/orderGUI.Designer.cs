@@ -35,29 +35,29 @@ namespace Restaurant_Ordering_System.GUI
             this.menuGridView = new System.Windows.Forms.DataGridView();
             this.cat_manager = new System.Windows.Forms.TabControl();
             this.cart_view = new System.Windows.Forms.TabPage();
+            this.btn_place_order = new System.Windows.Forms.Button();
+            this.citem_qty = new System.Windows.Forms.NumericUpDown();
+            this.btn_update_citem = new System.Windows.Forms.Button();
+            this.btn_remove_citem = new System.Windows.Forms.Button();
             this.cartGridView = new System.Windows.Forms.DataGridView();
             this.orders_view = new System.Windows.Forms.TabPage();
+            this.btn_serve_order = new System.Windows.Forms.Button();
+            this.btn_cancel_order = new System.Windows.Forms.Button();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
             this.customer_tab = new System.Windows.Forms.TabPage();
-            this.customersGridView = new System.Windows.Forms.DataGridView();
             this.btn_select_customer = new System.Windows.Forms.Button();
-            this.btn_remove_citem = new System.Windows.Forms.Button();
-            this.btn_update_citem = new System.Windows.Forms.Button();
-            this.citem_qty = new System.Windows.Forms.NumericUpDown();
-            this.btn_place_order = new System.Windows.Forms.Button();
-            this.btn_cancel_order = new System.Windows.Forms.Button();
-            this.btn_serve_order = new System.Windows.Forms.Button();
+            this.customersGridView = new System.Windows.Forms.DataGridView();
             this.menu_view.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.item_quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
             this.cat_manager.SuspendLayout();
             this.cart_view.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.citem_qty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).BeginInit();
             this.orders_view.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
             this.customer_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.citem_qty)).BeginInit();
             this.SuspendLayout();
             // 
             // menu_view
@@ -65,6 +65,7 @@ namespace Restaurant_Ordering_System.GUI
             this.menu_view.Controls.Add(this.btn_addtocart);
             this.menu_view.Controls.Add(this.item_quantity);
             this.menu_view.Controls.Add(this.menuGridView);
+            this.menu_view.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menu_view.Location = new System.Drawing.Point(4, 22);
             this.menu_view.Name = "menu_view";
             this.menu_view.Padding = new System.Windows.Forms.Padding(3);
@@ -75,9 +76,10 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // btn_addtocart
             // 
-            this.btn_addtocart.Location = new System.Drawing.Point(470, 370);
+            this.btn_addtocart.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addtocart.Location = new System.Drawing.Point(611, 355);
             this.btn_addtocart.Name = "btn_addtocart";
-            this.btn_addtocart.Size = new System.Drawing.Size(75, 23);
+            this.btn_addtocart.Size = new System.Drawing.Size(173, 33);
             this.btn_addtocart.TabIndex = 2;
             this.btn_addtocart.Text = "Add to Cart";
             this.btn_addtocart.UseVisualStyleBackColor = true;
@@ -85,7 +87,8 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // item_quantity
             // 
-            this.item_quantity.Location = new System.Drawing.Point(344, 373);
+            this.item_quantity.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.item_quantity.Location = new System.Drawing.Point(485, 358);
             this.item_quantity.Minimum = new decimal(new int[] {
             1,
             0,
@@ -93,7 +96,7 @@ namespace Restaurant_Ordering_System.GUI
             0});
             this.item_quantity.Name = "item_quantity";
             this.item_quantity.ReadOnly = true;
-            this.item_quantity.Size = new System.Drawing.Size(120, 20);
+            this.item_quantity.Size = new System.Drawing.Size(120, 30);
             this.item_quantity.TabIndex = 1;
             this.item_quantity.Value = new decimal(new int[] {
             1,
@@ -105,6 +108,8 @@ namespace Restaurant_Ordering_System.GUI
             // 
             this.menuGridView.AllowUserToAddRows = false;
             this.menuGridView.AllowUserToDeleteRows = false;
+            this.menuGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.menuGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.menuGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.menuGridView.Location = new System.Drawing.Point(6, 3);
@@ -133,6 +138,7 @@ namespace Restaurant_Ordering_System.GUI
             this.cart_view.Controls.Add(this.btn_update_citem);
             this.cart_view.Controls.Add(this.btn_remove_citem);
             this.cart_view.Controls.Add(this.cartGridView);
+            this.cart_view.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cart_view.Location = new System.Drawing.Point(4, 22);
             this.cart_view.Name = "cart_view";
             this.cart_view.Padding = new System.Windows.Forms.Padding(3);
@@ -140,6 +146,58 @@ namespace Restaurant_Ordering_System.GUI
             this.cart_view.TabIndex = 2;
             this.cart_view.Text = "Cart";
             this.cart_view.UseVisualStyleBackColor = true;
+            // 
+            // btn_place_order
+            // 
+            this.btn_place_order.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_place_order.Location = new System.Drawing.Point(706, 356);
+            this.btn_place_order.Name = "btn_place_order";
+            this.btn_place_order.Size = new System.Drawing.Size(80, 33);
+            this.btn_place_order.TabIndex = 5;
+            this.btn_place_order.Text = "Place Order";
+            this.btn_place_order.UseVisualStyleBackColor = true;
+            this.btn_place_order.Click += new System.EventHandler(this.btn_place_order_Click);
+            // 
+            // citem_qty
+            // 
+            this.citem_qty.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.citem_qty.Location = new System.Drawing.Point(9, 360);
+            this.citem_qty.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.citem_qty.Name = "citem_qty";
+            this.citem_qty.ReadOnly = true;
+            this.citem_qty.Size = new System.Drawing.Size(120, 26);
+            this.citem_qty.TabIndex = 4;
+            this.citem_qty.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btn_update_citem
+            // 
+            this.btn_update_citem.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update_citem.Location = new System.Drawing.Point(135, 356);
+            this.btn_update_citem.Name = "btn_update_citem";
+            this.btn_update_citem.Size = new System.Drawing.Size(75, 35);
+            this.btn_update_citem.TabIndex = 3;
+            this.btn_update_citem.Text = "Update";
+            this.btn_update_citem.UseVisualStyleBackColor = true;
+            this.btn_update_citem.Click += new System.EventHandler(this.btn_update_citem_Click);
+            // 
+            // btn_remove_citem
+            // 
+            this.btn_remove_citem.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remove_citem.Location = new System.Drawing.Point(216, 356);
+            this.btn_remove_citem.Name = "btn_remove_citem";
+            this.btn_remove_citem.Size = new System.Drawing.Size(75, 35);
+            this.btn_remove_citem.TabIndex = 2;
+            this.btn_remove_citem.Text = "Remove";
+            this.btn_remove_citem.UseVisualStyleBackColor = true;
+            this.btn_remove_citem.Click += new System.EventHandler(this.btn_remove_citem_Click);
             // 
             // cartGridView
             // 
@@ -158,6 +216,7 @@ namespace Restaurant_Ordering_System.GUI
             this.orders_view.Controls.Add(this.btn_serve_order);
             this.orders_view.Controls.Add(this.btn_cancel_order);
             this.orders_view.Controls.Add(this.ordersGridView);
+            this.orders_view.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orders_view.Location = new System.Drawing.Point(4, 22);
             this.orders_view.Name = "orders_view";
             this.orders_view.Padding = new System.Windows.Forms.Padding(3);
@@ -166,10 +225,34 @@ namespace Restaurant_Ordering_System.GUI
             this.orders_view.Text = "Orders";
             this.orders_view.UseVisualStyleBackColor = true;
             // 
+            // btn_serve_order
+            // 
+            this.btn_serve_order.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_serve_order.Location = new System.Drawing.Point(554, 358);
+            this.btn_serve_order.Name = "btn_serve_order";
+            this.btn_serve_order.Size = new System.Drawing.Size(112, 30);
+            this.btn_serve_order.TabIndex = 4;
+            this.btn_serve_order.Text = "Serve Order";
+            this.btn_serve_order.UseVisualStyleBackColor = true;
+            this.btn_serve_order.Click += new System.EventHandler(this.btn_serve_order_Click);
+            // 
+            // btn_cancel_order
+            // 
+            this.btn_cancel_order.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel_order.Location = new System.Drawing.Point(672, 358);
+            this.btn_cancel_order.Name = "btn_cancel_order";
+            this.btn_cancel_order.Size = new System.Drawing.Size(112, 30);
+            this.btn_cancel_order.TabIndex = 3;
+            this.btn_cancel_order.Text = "Cancel Order";
+            this.btn_cancel_order.UseVisualStyleBackColor = true;
+            this.btn_cancel_order.Click += new System.EventHandler(this.btn_cancel_order_Click);
+            // 
             // ordersGridView
             // 
             this.ordersGridView.AllowUserToAddRows = false;
             this.ordersGridView.AllowUserToDeleteRows = false;
+            this.ordersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ordersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ordersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersGridView.Location = new System.Drawing.Point(6, 6);
@@ -182,6 +265,7 @@ namespace Restaurant_Ordering_System.GUI
             // 
             this.customer_tab.Controls.Add(this.btn_select_customer);
             this.customer_tab.Controls.Add(this.customersGridView);
+            this.customer_tab.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customer_tab.Location = new System.Drawing.Point(4, 22);
             this.customer_tab.Name = "customer_tab";
             this.customer_tab.Padding = new System.Windows.Forms.Padding(3);
@@ -190,10 +274,23 @@ namespace Restaurant_Ordering_System.GUI
             this.customer_tab.Text = "Select Customer";
             this.customer_tab.UseVisualStyleBackColor = true;
             // 
+            // btn_select_customer
+            // 
+            this.btn_select_customer.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_select_customer.Location = new System.Drawing.Point(699, 358);
+            this.btn_select_customer.Name = "btn_select_customer";
+            this.btn_select_customer.Size = new System.Drawing.Size(82, 32);
+            this.btn_select_customer.TabIndex = 3;
+            this.btn_select_customer.Text = "Select";
+            this.btn_select_customer.UseVisualStyleBackColor = true;
+            this.btn_select_customer.Click += new System.EventHandler(this.btn_select_customer_Click);
+            // 
             // customersGridView
             // 
             this.customersGridView.AllowUserToAddRows = false;
             this.customersGridView.AllowUserToDeleteRows = false;
+            this.customersGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.customersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customersGridView.Location = new System.Drawing.Point(3, 6);
@@ -202,84 +299,6 @@ namespace Restaurant_Ordering_System.GUI
             this.customersGridView.Size = new System.Drawing.Size(778, 346);
             this.customersGridView.TabIndex = 2;
             // 
-            // btn_select_customer
-            // 
-            this.btn_select_customer.Location = new System.Drawing.Point(706, 358);
-            this.btn_select_customer.Name = "btn_select_customer";
-            this.btn_select_customer.Size = new System.Drawing.Size(75, 23);
-            this.btn_select_customer.TabIndex = 3;
-            this.btn_select_customer.Text = "Select";
-            this.btn_select_customer.UseVisualStyleBackColor = true;
-            this.btn_select_customer.Click += new System.EventHandler(this.btn_select_customer_Click);
-            // 
-            // btn_remove_citem
-            // 
-            this.btn_remove_citem.Location = new System.Drawing.Point(216, 358);
-            this.btn_remove_citem.Name = "btn_remove_citem";
-            this.btn_remove_citem.Size = new System.Drawing.Size(75, 23);
-            this.btn_remove_citem.TabIndex = 2;
-            this.btn_remove_citem.Text = "Remove";
-            this.btn_remove_citem.UseVisualStyleBackColor = true;
-            this.btn_remove_citem.Click += new System.EventHandler(this.btn_remove_citem_Click);
-            // 
-            // btn_update_citem
-            // 
-            this.btn_update_citem.Location = new System.Drawing.Point(135, 358);
-            this.btn_update_citem.Name = "btn_update_citem";
-            this.btn_update_citem.Size = new System.Drawing.Size(75, 23);
-            this.btn_update_citem.TabIndex = 3;
-            this.btn_update_citem.Text = "Update";
-            this.btn_update_citem.UseVisualStyleBackColor = true;
-            this.btn_update_citem.Click += new System.EventHandler(this.btn_update_citem_Click);
-            // 
-            // citem_qty
-            // 
-            this.citem_qty.Location = new System.Drawing.Point(9, 361);
-            this.citem_qty.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.citem_qty.Name = "citem_qty";
-            this.citem_qty.ReadOnly = true;
-            this.citem_qty.Size = new System.Drawing.Size(120, 20);
-            this.citem_qty.TabIndex = 4;
-            this.citem_qty.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // btn_place_order
-            // 
-            this.btn_place_order.Location = new System.Drawing.Point(709, 358);
-            this.btn_place_order.Name = "btn_place_order";
-            this.btn_place_order.Size = new System.Drawing.Size(75, 23);
-            this.btn_place_order.TabIndex = 5;
-            this.btn_place_order.Text = "Place Order";
-            this.btn_place_order.UseVisualStyleBackColor = true;
-            this.btn_place_order.Click += new System.EventHandler(this.btn_place_order_Click);
-            // 
-            // btn_cancel_order
-            // 
-            this.btn_cancel_order.Location = new System.Drawing.Point(672, 358);
-            this.btn_cancel_order.Name = "btn_cancel_order";
-            this.btn_cancel_order.Size = new System.Drawing.Size(112, 23);
-            this.btn_cancel_order.TabIndex = 3;
-            this.btn_cancel_order.Text = "Cancel Order";
-            this.btn_cancel_order.UseVisualStyleBackColor = true;
-            this.btn_cancel_order.Click += new System.EventHandler(this.btn_cancel_order_Click);
-            // 
-            // btn_serve_order
-            // 
-            this.btn_serve_order.Location = new System.Drawing.Point(554, 358);
-            this.btn_serve_order.Name = "btn_serve_order";
-            this.btn_serve_order.Size = new System.Drawing.Size(112, 23);
-            this.btn_serve_order.TabIndex = 4;
-            this.btn_serve_order.Text = "Serve Order";
-            this.btn_serve_order.UseVisualStyleBackColor = true;
-            this.btn_serve_order.Click += new System.EventHandler(this.btn_serve_order_Click);
-            // 
             // orderGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +306,7 @@ namespace Restaurant_Ordering_System.GUI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cat_manager);
             this.Name = "orderGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "orderGUI";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.orderGUI_FormClosed);
             this.Load += new System.EventHandler(this.orderGUI_Load);
@@ -295,12 +315,12 @@ namespace Restaurant_Ordering_System.GUI
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).EndInit();
             this.cat_manager.ResumeLayout(false);
             this.cart_view.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.citem_qty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).EndInit();
             this.orders_view.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
             this.customer_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.citem_qty)).EndInit();
             this.ResumeLayout(false);
 
         }

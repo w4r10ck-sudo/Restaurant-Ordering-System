@@ -23,6 +23,10 @@ namespace Restaurant_Ordering_System.BL
                 {
                     return new outputFormGUI("Wrong User");
                 }
+                if(ud.Status == "blocked")
+                {
+                    return new outputFormGUI("Your account is blocked.");
+                }
                 if (ud.Role == "admin")
                 {
                     SessionBL.setUserInSession(ud.Id.ToString());

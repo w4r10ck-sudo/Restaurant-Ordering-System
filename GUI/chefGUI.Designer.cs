@@ -42,17 +42,20 @@ namespace Restaurant_Ordering_System.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ordersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ordersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ordersGridView.Location = new System.Drawing.Point(12, 12);
+            this.ordersGridView.Location = new System.Drawing.Point(3, 5);
+            this.ordersGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ordersGridView.Name = "ordersGridView";
             this.ordersGridView.ReadOnly = true;
-            this.ordersGridView.Size = new System.Drawing.Size(776, 376);
+            this.ordersGridView.Size = new System.Drawing.Size(825, 358);
             this.ordersGridView.TabIndex = 1;
             // 
             // btn_prepared
             // 
-            this.btn_prepared.Location = new System.Drawing.Point(713, 394);
+            this.btn_prepared.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prepared.Location = new System.Drawing.Point(646, 373);
+            this.btn_prepared.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_prepared.Name = "btn_prepared";
-            this.btn_prepared.Size = new System.Drawing.Size(75, 23);
+            this.btn_prepared.Size = new System.Drawing.Size(182, 57);
             this.btn_prepared.TabIndex = 2;
             this.btn_prepared.Text = "Prepared";
             this.btn_prepared.UseVisualStyleBackColor = true;
@@ -60,12 +63,15 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // chefGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(833, 449);
             this.Controls.Add(this.btn_prepared);
             this.Controls.Add(this.ordersGridView);
+            this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "chefGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "chefGUI";
             this.Load += new System.EventHandler(this.chefGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();

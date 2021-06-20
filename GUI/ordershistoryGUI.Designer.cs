@@ -41,18 +41,22 @@ namespace Restaurant_Ordering_System.GUI
             this.ordersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ordersGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ordersGridView.Location = new System.Drawing.Point(0, 0);
+            this.ordersGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ordersGridView.Name = "ordersGridView";
             this.ordersGridView.ReadOnly = true;
-            this.ordersGridView.Size = new System.Drawing.Size(800, 450);
+            this.ordersGridView.Size = new System.Drawing.Size(785, 488);
             this.ordersGridView.TabIndex = 0;
             // 
             // ordershistoryGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(785, 488);
             this.Controls.Add(this.ordersGridView);
+            this.Font = new System.Drawing.Font("Cascadia Mono SemiLight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ordershistoryGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ordershistoryGUI";
             this.Load += new System.EventHandler(this.ordershistoryGUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();

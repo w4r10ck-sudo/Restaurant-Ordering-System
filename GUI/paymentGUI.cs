@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,6 +64,31 @@ namespace Restaurant_Ordering_System.GUI
                 {
                     new outputFormGUI("Already Paid!").ShowDialog();
                 }
+            }
+            else
+            {
+                new outputFormGUI("No Payments!").ShowDialog();
+            }
+        }
+        
+        private void btn_invoice_Click(object sender, EventArgs e)
+        {
+            if(paymentGridView.RowCount > 0)
+            {
+                invoiceGUI igui = new invoiceGUI();
+                igui.lb_pid.Text = paymentGridView.CurrentRow.Cells[0].Value.ToString();
+                igui.lb_amount.Text = paymentGridView.CurrentRow.Cells[1].Value.ToString();
+                igui.lb_customer.Text = paymentGridView.CurrentRow.Cells[2].Value.ToString();
+                igui.lb_status.Text = paymentGridView.CurrentRow.Cells[3].Value.ToString();
+                igui.ShowDialog();
+                /*PrintPreviewDialog printDlg = igui.billprintPreviewDialog1;
+                PrintDocument printDoc = igui.billprintDocument1;
+                printDoc.DocumentName = "Invoice";
+                printDlg.Document = printDoc;
+                if (printDlg.ShowDialog() == DialogResult.OK)
+                {
+                    printDoc.Print();
+                }*/
             }
             else
             {
