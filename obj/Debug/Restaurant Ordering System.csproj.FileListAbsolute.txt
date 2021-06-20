@@ -18,3 +18,6 @@ C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Order
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.foodItemGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.customerGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.orderGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.ordershistoryGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.paymentGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.chefGUI.resources

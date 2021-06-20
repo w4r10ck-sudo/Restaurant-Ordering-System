@@ -145,11 +145,23 @@
     <Compile Include="GUI\orderGUI.Designer.cs">
       <DependentUpon>orderGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ordershistoryGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ordershistoryGUI.Designer.cs">
+      <DependentUpon>ordershistoryGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\outputFormGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\outputFormGUI.Designer.cs">
       <DependentUpon>outputFormGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\paymentGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\paymentGUI.Designer.cs">
+      <DependentUpon>paymentGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\waiterGUI.cs">
       <SubType>Form</SubType>
@@ -164,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\categoryGUI.resx">
       <DependentUpon>categoryGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\chefGUI.resx">
+      <DependentUpon>chefGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\crashGUI.resx">
       <DependentUpon>crashGUI.cs</DependentUpon>
@@ -183,8 +198,14 @@
     <EmbeddedResource Include="GUI\orderGUI.resx">
       <DependentUpon>orderGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ordershistoryGUI.resx">
+      <DependentUpon>ordershistoryGUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\outputFormGUI.resx">
       <DependentUpon>outputFormGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\paymentGUI.resx">
+      <DependentUpon>paymentGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -12,9 +12,13 @@ namespace Restaurant_Ordering_System.DL
     class ordersDL
     {
         DbConnection dbcon;
+        PaymentDL paydl;
+        paymentDTO paydto;
         public ordersDL()
         {
             dbcon = new DbConnection();
+            paydl = new PaymentDL();
+            paydto = new paymentDTO();
         }
         public void createOrderInDb(List<ordersDTO> odto_list)
         {
@@ -49,11 +53,54 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "SELECT Orders.order_id, Users.username as waiter, Customer.name as customer, FoodItem.name as food, Orders.price, Orders.status FROM Orders INNER JOIN Users ON Orders.waiter = Users.user_id INNER JOIN Customer ON Orders.customer = Customer.customer_id INNER JOIN FoodItem ON Orders.food_item = FoodItem.food_id  WHERE Orders.customer = @Customer AND Orders.status = @Status OR Orders.status = @Status2;";
+                string queryString = "SELECT Orders.order_id, Users.username as waiter, Customer.name as customer, FoodItem.name as food, Orders.price, Orders.status FROM Orders INNER JOIN Users ON Orders.waiter = Users.user_id INNER JOIN Customer ON Orders.customer = Customer.customer_id INNER JOIN FoodItem ON Orders.food_item = FoodItem.food_id  WHERE Orders.customer = @Customer AND (Orders.status = @Status OR Orders.status = @Status2);";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Customer", Session.CustomerId);
                 com.Parameters.AddWithValue("@Status", "InProgress");
                 com.Parameters.AddWithValue("@Status2", "Prepared");
+                SqlDataReader reader = com.ExecuteReader();
+                dt.Load(reader);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbcon.Con.Close();
+            }
+        }
+        public DataTable getAllOrdersHistoryFromDb()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dbcon.Con.Open();
+                string queryString = "SELECT Orders.order_id, Users.username as waiter, Customer.name as customer, FoodItem.name as food, Orders.price, Orders.status FROM Orders INNER JOIN Users ON Orders.waiter = Users.user_id INNER JOIN Customer ON Orders.customer = Customer.customer_id INNER JOIN FoodItem ON Orders.food_item = FoodItem.food_id;";
+                SqlCommand com = new SqlCommand(queryString, dbcon.Con);
+                SqlDataReader reader = com.ExecuteReader();
+                dt.Load(reader);
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbcon.Con.Close();
+            }
+        }
+        public DataTable getAllOrdersForKitchenFromDb()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dbcon.Con.Open();
+                string queryString = "SELECT * FROM Orders WHERE status = @Status;";
+                SqlCommand com = new SqlCommand(queryString, dbcon.Con);
+                com.Parameters.AddWithValue("@Status", "InProgress");
                 SqlDataReader reader = com.ExecuteReader();
                 dt.Load(reader);
                 return dt;
@@ -72,6 +119,27 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
+                if(odto.Status == "Served")
+                {
+                    string selectString = "SELECT * FROM Orders WHERE customer=@Customer AND status = @Status";
+                    SqlCommand com1 = new SqlCommand(selectString, dbcon.Con);
+                    com1.Parameters.AddWithValue("@Customer", Session.CustomerId);
+                    com1.Parameters.AddWithValue("@Status", "Prepared");
+                    SqlDataReader reader = com1.ExecuteReader();
+                    if(reader.HasRows)
+                    {
+                        int amount = 0;
+                        while(reader.Read())
+                        {
+                            amount += Convert.ToInt16(reader["price"].ToString());
+                        }
+                        paydto.Amount = amount.ToString();
+                    }
+                    paydto.Customer = Session.CustomerId;
+                    paydto.Status = "Unpaid";
+                    paydl.createpaymentInDb(paydto);
+                }
+                
                 string queryString = "UPDATE Orders SET status = @Status WHERE customer=@Customer AND status != @Status1 AND status != @status2;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Status", odto.Status);
@@ -89,6 +157,29 @@ namespace Restaurant_Ordering_System.DL
             {
                 dbcon.Con.Close();
             }
+        }
+        public int prepareOrderInDb(ordersDTO odto)
+        {
+            try
+            {
+                dbcon.Con.Open();
+                string selectString = "UPDATE Orders SET status = @Status WHERE customer=@Customer AND status = @Status1";
+                SqlCommand com = new SqlCommand(selectString, dbcon.Con);
+                com.Parameters.AddWithValue("@Status", "Prepared");
+                com.Parameters.AddWithValue("@Customer", odto.Customer);
+                com.Parameters.AddWithValue("@Status1", "InProgress");
+                int rowAffected = com.ExecuteNonQuery();
+                return rowAffected;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbcon.Con.Close();
+            }
+
         }
 
     }

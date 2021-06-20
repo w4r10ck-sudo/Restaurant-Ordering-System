@@ -40,11 +40,57 @@ namespace Restaurant_Ordering_System.BL
                 throw ex;
             }
         }
+        public DataTable getAllOrdersHistory()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = odl.getAllOrdersHistoryFromDb();
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public DataTable getAllOrdersforKitchen()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = odl.getAllOrdersForKitchenFromDb();
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
         public Form updateOrder(ordersDTO odto)
         {
             try
             {
-                int num = odl.updateOrderStatusInDb(odto); ;
+                int num = odl.updateOrderStatusInDb(odto);
+                if (num >= 1)
+                {
+                    return new outputFormGUI("Success");
+                }
+                else
+                {
+                    string msg = "It seems that Order does not exist\n OR \n No record have been changed";
+                    return new outputFormGUI(msg);
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+        public Form prepareOrder(ordersDTO odto)
+        {
+            try
+            {
+                int num = odl.prepareOrderInDb(odto);
                 if (num >= 1)
                 {
                     return new outputFormGUI("Success");

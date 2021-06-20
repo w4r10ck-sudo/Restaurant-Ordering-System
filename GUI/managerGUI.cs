@@ -52,5 +52,23 @@ namespace Restaurant_Ordering_System.GUI
             orderGUI ogui = new orderGUI();
             ogui.ShowDialog();
         }
+
+        private void btn_payment_Click(object sender, EventArgs e)
+        {
+            paymentGUI paygui = new paymentGUI();
+            paygui.ShowDialog();
+        }
+
+        private void btn_order_hist_Click(object sender, EventArgs e)
+        {
+            ordershistoryGUI ohgui = new ordershistoryGUI();
+            ohgui.ShowDialog();
+        }
+
+        private void btn_kit_manage_Click(object sender, EventArgs e)
+        {
+            chefGUI cgui = new chefGUI();
+            cgui.ShowDialog();
+        }
     }
 }
