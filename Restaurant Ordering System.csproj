@@ -69,6 +69,8 @@
     <Compile Include="BL\foodItemBL.cs" />
     <Compile Include="BL\loginBL.cs" />
     <Compile Include="BL\managerBL.cs" />
+    <Compile Include="BL\ordersBL.cs" />
+    <Compile Include="BL\SessionBL.cs" />
     <Compile Include="BL\userBL.cs" />
     <Compile Include="DL\adminDL.cs" />
     <Compile Include="DL\cartDL.cs" />
@@ -77,12 +79,14 @@
     <Compile Include="DL\DbConnection.cs" />
     <Compile Include="DL\foodItemDL.cs" />
     <Compile Include="DL\loginDL.cs" />
+    <Compile Include="DL\ordersDL.cs" />
     <Compile Include="DL\Session.cs" />
     <Compile Include="DTO\cartDTO.cs" />
     <Compile Include="DTO\categoryDTO.cs" />
     <Compile Include="DTO\customerDTO.cs" />
     <Compile Include="DTO\foodItemDTO.cs" />
     <Compile Include="DTO\loginDTO.cs" />
+    <Compile Include="DTO\ordersDTO.cs" />
     <Compile Include="DTO\userDTO.cs" />
     <Compile Include="GUI\adminGUI.cs">
       <SubType>Form</SubType>

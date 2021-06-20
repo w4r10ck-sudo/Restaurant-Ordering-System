@@ -34,22 +34,29 @@ namespace Restaurant_Ordering_System.GUI
             this.item_quantity = new System.Windows.Forms.NumericUpDown();
             this.menuGridView = new System.Windows.Forms.DataGridView();
             this.cat_manager = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cart_view = new System.Windows.Forms.TabPage();
             this.cartGridView = new System.Windows.Forms.DataGridView();
             this.orders_view = new System.Windows.Forms.TabPage();
-            this.customer_tab = new System.Windows.Forms.TabPage();
             this.ordersGridView = new System.Windows.Forms.DataGridView();
+            this.customer_tab = new System.Windows.Forms.TabPage();
             this.customersGridView = new System.Windows.Forms.DataGridView();
+            this.btn_select_customer = new System.Windows.Forms.Button();
+            this.btn_remove_citem = new System.Windows.Forms.Button();
+            this.btn_update_citem = new System.Windows.Forms.Button();
+            this.citem_qty = new System.Windows.Forms.NumericUpDown();
+            this.btn_place_order = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menu_view.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.item_quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
             this.cat_manager.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.cart_view.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).BeginInit();
             this.orders_view.SuspendLayout();
-            this.customer_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).BeginInit();
+            this.customer_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.citem_qty)).BeginInit();
             this.SuspendLayout();
             // 
             // menu_view
@@ -73,6 +80,7 @@ namespace Restaurant_Ordering_System.GUI
             this.btn_addtocart.TabIndex = 2;
             this.btn_addtocart.Text = "Add to Cart";
             this.btn_addtocart.UseVisualStyleBackColor = true;
+            this.btn_addtocart.Click += new System.EventHandler(this.btn_addtocart_Click);
             // 
             // item_quantity
             // 
@@ -83,6 +91,7 @@ namespace Restaurant_Ordering_System.GUI
             0,
             0});
             this.item_quantity.Name = "item_quantity";
+            this.item_quantity.ReadOnly = true;
             this.item_quantity.Size = new System.Drawing.Size(120, 20);
             this.item_quantity.TabIndex = 1;
             this.item_quantity.Value = new decimal(new int[] {
@@ -106,7 +115,7 @@ namespace Restaurant_Ordering_System.GUI
             // cat_manager
             // 
             this.cat_manager.Controls.Add(this.menu_view);
-            this.cat_manager.Controls.Add(this.tabPage1);
+            this.cat_manager.Controls.Add(this.cart_view);
             this.cat_manager.Controls.Add(this.orders_view);
             this.cat_manager.Controls.Add(this.customer_tab);
             this.cat_manager.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -116,16 +125,20 @@ namespace Restaurant_Ordering_System.GUI
             this.cat_manager.Size = new System.Drawing.Size(800, 450);
             this.cat_manager.TabIndex = 2;
             // 
-            // tabPage1
+            // cart_view
             // 
-            this.tabPage1.Controls.Add(this.cartGridView);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(792, 424);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Cart";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.cart_view.Controls.Add(this.btn_place_order);
+            this.cart_view.Controls.Add(this.citem_qty);
+            this.cart_view.Controls.Add(this.btn_update_citem);
+            this.cart_view.Controls.Add(this.btn_remove_citem);
+            this.cart_view.Controls.Add(this.cartGridView);
+            this.cart_view.Location = new System.Drawing.Point(4, 22);
+            this.cart_view.Name = "cart_view";
+            this.cart_view.Padding = new System.Windows.Forms.Padding(3);
+            this.cart_view.Size = new System.Drawing.Size(792, 424);
+            this.cart_view.TabIndex = 2;
+            this.cart_view.Text = "Cart";
+            this.cart_view.UseVisualStyleBackColor = true;
             // 
             // cartGridView
             // 
@@ -141,6 +154,7 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // orders_view
             // 
+            this.orders_view.Controls.Add(this.button1);
             this.orders_view.Controls.Add(this.ordersGridView);
             this.orders_view.Location = new System.Drawing.Point(4, 22);
             this.orders_view.Name = "orders_view";
@@ -149,17 +163,6 @@ namespace Restaurant_Ordering_System.GUI
             this.orders_view.TabIndex = 3;
             this.orders_view.Text = "Orders";
             this.orders_view.UseVisualStyleBackColor = true;
-            // 
-            // customer_tab
-            // 
-            this.customer_tab.Controls.Add(this.customersGridView);
-            this.customer_tab.Location = new System.Drawing.Point(4, 22);
-            this.customer_tab.Name = "customer_tab";
-            this.customer_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.customer_tab.Size = new System.Drawing.Size(792, 424);
-            this.customer_tab.TabIndex = 4;
-            this.customer_tab.Text = "Select Customer";
-            this.customer_tab.UseVisualStyleBackColor = true;
             // 
             // ordersGridView
             // 
@@ -173,6 +176,18 @@ namespace Restaurant_Ordering_System.GUI
             this.ordersGridView.Size = new System.Drawing.Size(778, 346);
             this.ordersGridView.TabIndex = 2;
             // 
+            // customer_tab
+            // 
+            this.customer_tab.Controls.Add(this.btn_select_customer);
+            this.customer_tab.Controls.Add(this.customersGridView);
+            this.customer_tab.Location = new System.Drawing.Point(4, 22);
+            this.customer_tab.Name = "customer_tab";
+            this.customer_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.customer_tab.Size = new System.Drawing.Size(792, 424);
+            this.customer_tab.TabIndex = 4;
+            this.customer_tab.Text = "Select Customer";
+            this.customer_tab.UseVisualStyleBackColor = true;
+            // 
             // customersGridView
             // 
             this.customersGridView.AllowUserToAddRows = false;
@@ -185,6 +200,73 @@ namespace Restaurant_Ordering_System.GUI
             this.customersGridView.Size = new System.Drawing.Size(778, 346);
             this.customersGridView.TabIndex = 2;
             // 
+            // btn_select_customer
+            // 
+            this.btn_select_customer.Location = new System.Drawing.Point(706, 358);
+            this.btn_select_customer.Name = "btn_select_customer";
+            this.btn_select_customer.Size = new System.Drawing.Size(75, 23);
+            this.btn_select_customer.TabIndex = 3;
+            this.btn_select_customer.Text = "Select";
+            this.btn_select_customer.UseVisualStyleBackColor = true;
+            this.btn_select_customer.Click += new System.EventHandler(this.btn_select_customer_Click);
+            // 
+            // btn_remove_citem
+            // 
+            this.btn_remove_citem.Location = new System.Drawing.Point(216, 358);
+            this.btn_remove_citem.Name = "btn_remove_citem";
+            this.btn_remove_citem.Size = new System.Drawing.Size(75, 23);
+            this.btn_remove_citem.TabIndex = 2;
+            this.btn_remove_citem.Text = "Remove";
+            this.btn_remove_citem.UseVisualStyleBackColor = true;
+            this.btn_remove_citem.Click += new System.EventHandler(this.btn_remove_citem_Click);
+            // 
+            // btn_update_citem
+            // 
+            this.btn_update_citem.Location = new System.Drawing.Point(135, 358);
+            this.btn_update_citem.Name = "btn_update_citem";
+            this.btn_update_citem.Size = new System.Drawing.Size(75, 23);
+            this.btn_update_citem.TabIndex = 3;
+            this.btn_update_citem.Text = "Update";
+            this.btn_update_citem.UseVisualStyleBackColor = true;
+            this.btn_update_citem.Click += new System.EventHandler(this.btn_update_citem_Click);
+            // 
+            // citem_qty
+            // 
+            this.citem_qty.Location = new System.Drawing.Point(9, 361);
+            this.citem_qty.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.citem_qty.Name = "citem_qty";
+            this.citem_qty.ReadOnly = true;
+            this.citem_qty.Size = new System.Drawing.Size(120, 20);
+            this.citem_qty.TabIndex = 4;
+            this.citem_qty.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btn_place_order
+            // 
+            this.btn_place_order.Location = new System.Drawing.Point(709, 358);
+            this.btn_place_order.Name = "btn_place_order";
+            this.btn_place_order.Size = new System.Drawing.Size(75, 23);
+            this.btn_place_order.TabIndex = 5;
+            this.btn_place_order.Text = "Place Order";
+            this.btn_place_order.UseVisualStyleBackColor = true;
+            this.btn_place_order.Click += new System.EventHandler(this.btn_place_order_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(709, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // orderGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,17 +275,19 @@ namespace Restaurant_Ordering_System.GUI
             this.Controls.Add(this.cat_manager);
             this.Name = "orderGUI";
             this.Text = "orderGUI";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.orderGUI_FormClosed);
             this.Load += new System.EventHandler(this.orderGUI_Load);
             this.menu_view.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.item_quantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).EndInit();
             this.cat_manager.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.cart_view.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cartGridView)).EndInit();
             this.orders_view.ResumeLayout(false);
-            this.customer_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ordersGridView)).EndInit();
+            this.customer_tab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.citem_qty)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -213,7 +297,7 @@ namespace Restaurant_Ordering_System.GUI
         private System.Windows.Forms.TabPage menu_view;
         private System.Windows.Forms.DataGridView menuGridView;
         private System.Windows.Forms.TabControl cat_manager;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage cart_view;
         private System.Windows.Forms.DataGridView cartGridView;
         private System.Windows.Forms.NumericUpDown item_quantity;
         private System.Windows.Forms.Button btn_addtocart;
@@ -221,5 +305,11 @@ namespace Restaurant_Ordering_System.GUI
         private System.Windows.Forms.TabPage customer_tab;
         private System.Windows.Forms.DataGridView ordersGridView;
         private System.Windows.Forms.DataGridView customersGridView;
+        private System.Windows.Forms.Button btn_select_customer;
+        private System.Windows.Forms.Button btn_update_citem;
+        private System.Windows.Forms.Button btn_remove_citem;
+        private System.Windows.Forms.NumericUpDown citem_qty;
+        private System.Windows.Forms.Button btn_place_order;
+        private System.Windows.Forms.Button button1;
     }
 }

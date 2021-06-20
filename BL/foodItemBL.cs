@@ -63,7 +63,6 @@ namespace Restaurant_Ordering_System.BL
                 fd = fooditemdl.getFoodItemFromDb(foodItemdto);
                 if (!object.ReferenceEquals(null, fd))
                 {
-                    Console.WriteLine(fd);
                     return fd;
                 }
             }

@@ -24,8 +24,8 @@ namespace Restaurant_Ordering_System.DL
                 string queryString = "INSERT INTO Cart (food_id, waiter, customer, qty) VALUES(@Food, @Waiter, @Customer, @Qty);";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Food", cartdto.Fooditem);
-                com.Parameters.AddWithValue("@Waiter", cartdto.Waiter);
-                com.Parameters.AddWithValue("@Customer", cartdto.Customer);
+                com.Parameters.AddWithValue("@Waiter", Session.UserId);
+                com.Parameters.AddWithValue("@Customer", Session.CustomerId);
                 com.Parameters.AddWithValue("@Qty", cartdto.Qty);
                 int rowAffected = com.ExecuteNonQuery();
             }
@@ -44,7 +44,7 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "SELECT Cart.cart_id, FoodItem.name as food, Users.username as waiter, Customer.name as customer FROM Cart INNER JOIN FoodItem ON Cart.food_id = FoodItem.food_id INNER JOIN Users ON Cart.waiter = Users.user_id INNER JOIN Customer ON Cart.customer = Customer.customer_id WHERE Cart.customer = @Customer;";
+                string queryString = "SELECT Cart.cart_id, FoodItem.name as food, Users.username as waiter, Customer.name as customer, Cart.qty FROM Cart INNER JOIN FoodItem ON Cart.food_id = FoodItem.food_id INNER JOIN Users ON Cart.waiter = Users.user_id INNER JOIN Customer ON Cart.customer = Customer.customer_id WHERE Cart.customer = @Customer;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Customer", Session.CustomerId);
                 SqlDataReader reader = com.ExecuteReader();
@@ -65,7 +65,7 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "UPDATE FoodItem SET qty = @QTY WHERE cart_id = @Cartid;";
+                string queryString = "UPDATE Cart SET qty = @QTY WHERE cart_id = @Cartid;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@QTY", cartdto.Qty);
                 com.Parameters.AddWithValue("@Cartid", cartdto.cartId);
@@ -89,6 +89,26 @@ namespace Restaurant_Ordering_System.DL
                 string queryString = "Delete FROM Cart WHERE cart_id = @Cartid;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Cartid", cartdto.cartId);
+                int rowAffected = com.ExecuteNonQuery();
+                return rowAffected;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbcon.Con.Close();
+            }
+        }
+        public int deleteAllcartItemsFromDb()
+        {
+            try
+            {
+                dbcon.Con.Open();
+                string queryString = "Delete FROM Cart WHERE customer = @Customer;";
+                SqlCommand com = new SqlCommand(queryString, dbcon.Con);
+                com.Parameters.AddWithValue("@Customer", Session.CustomerId);
                 int rowAffected = com.ExecuteNonQuery();
                 return rowAffected;
             }

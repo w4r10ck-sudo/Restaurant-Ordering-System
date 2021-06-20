@@ -108,7 +108,6 @@ namespace Restaurant_Ordering_System.GUI
                 fooddto2 = foodbl.GetfoodItem(fooddto);
                 if (!object.ReferenceEquals(null, fooddto2))
                 {
-                    Console.WriteLine(fooddto2);
                     txt_foodname_update.Text = fooddto2.Name;
                     txt_foodprice_update.Text = fooddto2.Price;
                     txt_fooddesc_update.Text = fooddto2.Description;
@@ -116,7 +115,7 @@ namespace Restaurant_Ordering_System.GUI
                 }
                 else
                 {
-                    new outputFormGUI("Food Item does not exist!");
+                    new outputFormGUI("Food Item does not exist!").ShowDialog();
                 }
             }
             catch (SqlException ex)

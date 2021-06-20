@@ -80,5 +80,16 @@ namespace Restaurant_Ordering_System.BL
                 throw ex;
             }
         }
+        public void deleteAllCartItems()
+        {
+            try
+            {
+                int num = cdl.deleteAllcartItemsFromDb();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -133,7 +133,7 @@ namespace Restaurant_Ordering_System.GUI
                     }
                     else
                     {
-                        new outputFormGUI("Something went Wrong..!");
+                        new outputFormGUI("Something went Wrong..!").ShowDialog();
                     }
                 }
                 catch(SqlException ex)

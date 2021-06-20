@@ -25,10 +25,12 @@ namespace Restaurant_Ordering_System.BL
                 }
                 if (ud.Role == "admin")
                 {
+                    SessionBL.setUserInSession(ud.Id.ToString());
                     return new adminGUI();
                 }
                 else if (ud.Role == "Manager")
                 {
+                    SessionBL.setUserInSession(ud.Id.ToString());
                     return new managerGUI(ud);
                 }
                 else if (ud.Role == "chef")
@@ -37,6 +39,7 @@ namespace Restaurant_Ordering_System.BL
                 }
                 else if (ud.Role == "waiter")
                 {
+                    SessionBL.setUserInSession(ud.Id.ToString());
                     return new waiterGUI();
                 }
                 else

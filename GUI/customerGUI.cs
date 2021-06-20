@@ -90,7 +90,7 @@ namespace Restaurant_Ordering_System.GUI
                         }
                         else
                         {
-                            new outputFormGUI("User not Found..!");
+                            new outputFormGUI("User not Found..!").ShowDialog();
                         }
                     }
                     catch (SqlException ex)

@@ -12,6 +12,7 @@ namespace Restaurant_Ordering_System.DTO
         public string Waiter { get; set; }
         public string Customer { get; set; }
         public string Fooditem { get; set; }
+        public string Price { get; set; }
         public string Status { get; set; }
     }
 }

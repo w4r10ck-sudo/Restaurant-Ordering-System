@@ -44,7 +44,7 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "SELECT FoodItem.name, FoodItem.price, FoodItem.description, Category.name as category FROM FoodItem INNER JOIN Category ON FoodItem.category = Category.category_id;";
+                string queryString = "SELECT FoodItem.food_id, FoodItem.name, FoodItem.price, FoodItem.description, Category.name as category FROM FoodItem INNER JOIN Category ON FoodItem.category = Category.category_id;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 SqlDataReader reader = com.ExecuteReader();
                 dt.Load(reader);
@@ -76,6 +76,7 @@ namespace Restaurant_Ordering_System.DL
                     fooddto.Price = reader["price"].ToString();
                     fooddto.Description = reader["description"].ToString();
                     fooddto.Category = reader["category"].ToString();
+                    return fooddto;
                 }
                 return null;
             }

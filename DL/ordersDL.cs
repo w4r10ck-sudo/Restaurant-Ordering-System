@@ -24,11 +24,12 @@ namespace Restaurant_Ordering_System.DL
                 dbcon.Con.Open();
                 foreach (ordersDTO odto in odto_list)
                 {
-                    string queryString = "INSERT INTO Orders (waiter, customer, food_item, status) VALUES((SELECT user_id FROM Users WHERE username = @Waiter), (SELECT customer_id FROM Customer WHERE name = @Customer), (SELECT food_id FROM FoodItem WHERE name = @Food), @Status);";
+                    string queryString = "INSERT INTO Orders (waiter, customer, food_item, price, status) VALUES((SELECT user_id FROM Users WHERE username = @Waiter), (SELECT customer_id FROM Customer WHERE name = @Customer), (SELECT food_id FROM FoodItem WHERE name = @Food), @Price, @Status);";
                     SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                     com.Parameters.AddWithValue("@Waiter", odto.Waiter);
                     com.Parameters.AddWithValue("@Customer", odto.Customer);
                     com.Parameters.AddWithValue("@Food", odto.Fooditem);
+                    com.Parameters.AddWithValue("@Price", odto.Price);
                     com.Parameters.AddWithValue("@Status", odto.Status);
                     rowAffected = com.ExecuteNonQuery();
                 }
@@ -48,7 +49,7 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "SELECT Orders.order_id, Users.username as waiter, Customer.name as customer, FoodItem.name as food, Orders.status FROM Orders INNER JOIN Users ON Orders.waiter = Users.user_id INNER JOIN Customer ON Orders.customer = Customer.customer_id INNER JOIN FoodItem ON Orders.food_id = FoodItem.food_id  WHERE Orders.customer = @Customer AND Orders.status = @Status;";
+                string queryString = "SELECT Orders.order_id, Users.username as waiter, Customer.name as customer, FoodItem.name as food, Orders.price, Orders.status FROM Orders INNER JOIN Users ON Orders.waiter = Users.user_id INNER JOIN Customer ON Orders.customer = Customer.customer_id INNER JOIN FoodItem ON Orders.food_item = FoodItem.food_id  WHERE Orders.customer = @Customer AND Orders.status = @Status;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Customer", Session.CustomerId);
                 com.Parameters.AddWithValue("@Status", "InProgress");
