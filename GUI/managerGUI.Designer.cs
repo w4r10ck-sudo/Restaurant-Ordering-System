@@ -92,6 +92,7 @@ namespace Restaurant_Ordering_System.GUI
             this.btn_customer.TabIndex = 4;
             this.btn_customer.Text = "Customer";
             this.btn_customer.UseVisualStyleBackColor = true;
+            this.btn_customer.Click += new System.EventHandler(this.btn_customer_Click);
             // 
             // btn_payment
             // 

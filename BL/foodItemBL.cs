@@ -61,8 +61,11 @@ namespace Restaurant_Ordering_System.BL
             {
                 foodItemDTO fd = new foodItemDTO();
                 fd = fooditemdl.getFoodItemFromDb(foodItemdto);
-                if (!string.IsNullOrEmpty(fd.Description))
+                if (!object.ReferenceEquals(null, fd))
+                {
+                    Console.WriteLine(fd);
                     return fd;
+                }
             }
             catch (SqlException ex)
             {

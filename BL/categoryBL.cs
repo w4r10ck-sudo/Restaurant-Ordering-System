@@ -27,7 +27,6 @@ namespace Restaurant_Ordering_System.BL
             {
                 throw ex;
             }
-            return new outputFormGUI("Something went wrong..!");
         }
         public DataTable getAllCategories()
         {

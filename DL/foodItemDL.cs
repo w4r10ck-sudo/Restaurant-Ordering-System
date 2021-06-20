@@ -76,8 +76,10 @@ namespace Restaurant_Ordering_System.DL
                     fooddto.Price = reader["price"].ToString();
                     fooddto.Description = reader["description"].ToString();
                     fooddto.Category = reader["category"].ToString();
+                    Console.WriteLine(fooddto.Name);
                 }
-                return fooddto;
+                Console.WriteLine(fooddto.Name);
+                return null;
             }
             catch (SqlException ex)
             {
