@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL\adminBL.cs" />
+    <Compile Include="BL\cartBL.cs" />
     <Compile Include="BL\categoryBL.cs" />
     <Compile Include="BL\customerBL.cs" />
     <Compile Include="BL\EncryptorDecryptor.cs" />
@@ -70,11 +71,14 @@
     <Compile Include="BL\managerBL.cs" />
     <Compile Include="BL\userBL.cs" />
     <Compile Include="DL\adminDL.cs" />
+    <Compile Include="DL\cartDL.cs" />
     <Compile Include="DL\categoryDL.cs" />
     <Compile Include="DL\customerDL.cs" />
     <Compile Include="DL\DbConnection.cs" />
     <Compile Include="DL\foodItemDL.cs" />
     <Compile Include="DL\loginDL.cs" />
+    <Compile Include="DL\Session.cs" />
+    <Compile Include="DTO\cartDTO.cs" />
     <Compile Include="DTO\categoryDTO.cs" />
     <Compile Include="DTO\customerDTO.cs" />
     <Compile Include="DTO\foodItemDTO.cs" />
@@ -128,6 +132,12 @@
     <Compile Include="GUI\managerGUI.Designer.cs">
       <DependentUpon>managerGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\orderGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\orderGUI.Designer.cs">
+      <DependentUpon>orderGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\outputFormGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\managerGUI.resx">
       <DependentUpon>managerGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\orderGUI.resx">
+      <DependentUpon>orderGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\outputFormGUI.resx">
       <DependentUpon>outputFormGUI.cs</DependentUpon>

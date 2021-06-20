@@ -31,6 +31,7 @@ namespace Restaurant_Ordering_System.GUI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dashboardtab = new System.Windows.Forms.TabPage();
+            this.btn_pd = new System.Windows.Forms.Button();
             this.btn_fooditem = new System.Windows.Forms.Button();
             this.btn_customer = new System.Windows.Forms.Button();
             this.btn_payment = new System.Windows.Forms.Button();
@@ -61,6 +62,7 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // dashboardtab
             // 
+            this.dashboardtab.Controls.Add(this.btn_pd);
             this.dashboardtab.Controls.Add(this.btn_fooditem);
             this.dashboardtab.Controls.Add(this.btn_customer);
             this.dashboardtab.Controls.Add(this.btn_payment);
@@ -73,6 +75,16 @@ namespace Restaurant_Ordering_System.GUI
             this.dashboardtab.TabIndex = 0;
             this.dashboardtab.Text = "Dashboard";
             this.dashboardtab.UseVisualStyleBackColor = true;
+            // 
+            // btn_pd
+            // 
+            this.btn_pd.Location = new System.Drawing.Point(601, 62);
+            this.btn_pd.Name = "btn_pd";
+            this.btn_pd.Size = new System.Drawing.Size(131, 23);
+            this.btn_pd.TabIndex = 6;
+            this.btn_pd.Text = "Place Order";
+            this.btn_pd.UseVisualStyleBackColor = true;
+            this.btn_pd.Click += new System.EventHandler(this.btn_pd_Click);
             // 
             // btn_fooditem
             // 
@@ -96,7 +108,7 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // btn_payment
             // 
-            this.btn_payment.Location = new System.Drawing.Point(599, 62);
+            this.btn_payment.Location = new System.Drawing.Point(246, 145);
             this.btn_payment.Name = "btn_payment";
             this.btn_payment.Size = new System.Drawing.Size(131, 23);
             this.btn_payment.TabIndex = 3;
@@ -224,5 +236,6 @@ namespace Restaurant_Ordering_System.GUI
         private System.Windows.Forms.Button btn_customer;
         private System.Windows.Forms.Button btn_payment;
         private System.Windows.Forms.Button btn_Bill;
+        private System.Windows.Forms.Button btn_pd;
     }
 }

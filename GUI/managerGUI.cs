@@ -46,5 +46,11 @@ namespace Restaurant_Ordering_System.GUI
             customerGUI cgui = new customerGUI();
             cgui.ShowDialog();
         }
+
+        private void btn_pd_Click(object sender, EventArgs e)
+        {
+            orderGUI ogui = new orderGUI();
+            ogui.ShowDialog();
+        }
     }
 }
