@@ -45,7 +45,8 @@ namespace Restaurant_Ordering_System.GUI
             this.btn_update_citem = new System.Windows.Forms.Button();
             this.citem_qty = new System.Windows.Forms.NumericUpDown();
             this.btn_place_order = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_cancel_order = new System.Windows.Forms.Button();
+            this.btn_serve_order = new System.Windows.Forms.Button();
             this.menu_view.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.item_quantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.menuGridView)).BeginInit();
@@ -154,7 +155,8 @@ namespace Restaurant_Ordering_System.GUI
             // 
             // orders_view
             // 
-            this.orders_view.Controls.Add(this.button1);
+            this.orders_view.Controls.Add(this.btn_serve_order);
+            this.orders_view.Controls.Add(this.btn_cancel_order);
             this.orders_view.Controls.Add(this.ordersGridView);
             this.orders_view.Location = new System.Drawing.Point(4, 22);
             this.orders_view.Name = "orders_view";
@@ -170,10 +172,10 @@ namespace Restaurant_Ordering_System.GUI
             this.ordersGridView.AllowUserToDeleteRows = false;
             this.ordersGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ordersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ordersGridView.Location = new System.Drawing.Point(8, 6);
+            this.ordersGridView.Location = new System.Drawing.Point(6, 6);
             this.ordersGridView.Name = "ordersGridView";
             this.ordersGridView.ReadOnly = true;
-            this.ordersGridView.Size = new System.Drawing.Size(778, 346);
+            this.ordersGridView.Size = new System.Drawing.Size(780, 346);
             this.ordersGridView.TabIndex = 2;
             // 
             // customer_tab
@@ -258,14 +260,25 @@ namespace Restaurant_Ordering_System.GUI
             this.btn_place_order.UseVisualStyleBackColor = true;
             this.btn_place_order.Click += new System.EventHandler(this.btn_place_order_Click);
             // 
-            // button1
+            // btn_cancel_order
             // 
-            this.button1.Location = new System.Drawing.Point(709, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_cancel_order.Location = new System.Drawing.Point(672, 358);
+            this.btn_cancel_order.Name = "btn_cancel_order";
+            this.btn_cancel_order.Size = new System.Drawing.Size(112, 23);
+            this.btn_cancel_order.TabIndex = 3;
+            this.btn_cancel_order.Text = "Cancel Order";
+            this.btn_cancel_order.UseVisualStyleBackColor = true;
+            this.btn_cancel_order.Click += new System.EventHandler(this.btn_cancel_order_Click);
+            // 
+            // btn_serve_order
+            // 
+            this.btn_serve_order.Location = new System.Drawing.Point(554, 358);
+            this.btn_serve_order.Name = "btn_serve_order";
+            this.btn_serve_order.Size = new System.Drawing.Size(112, 23);
+            this.btn_serve_order.TabIndex = 4;
+            this.btn_serve_order.Text = "Serve Order";
+            this.btn_serve_order.UseVisualStyleBackColor = true;
+            this.btn_serve_order.Click += new System.EventHandler(this.btn_serve_order_Click);
             // 
             // orderGUI
             // 
@@ -310,6 +323,7 @@ namespace Restaurant_Ordering_System.GUI
         private System.Windows.Forms.Button btn_remove_citem;
         private System.Windows.Forms.NumericUpDown citem_qty;
         private System.Windows.Forms.Button btn_place_order;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_cancel_order;
+        private System.Windows.Forms.Button btn_serve_order;
     }
 }

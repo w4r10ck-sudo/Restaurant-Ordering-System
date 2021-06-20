@@ -49,10 +49,11 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "SELECT Orders.order_id, Users.username as waiter, Customer.name as customer, FoodItem.name as food, Orders.price, Orders.status FROM Orders INNER JOIN Users ON Orders.waiter = Users.user_id INNER JOIN Customer ON Orders.customer = Customer.customer_id INNER JOIN FoodItem ON Orders.food_item = FoodItem.food_id  WHERE Orders.customer = @Customer AND Orders.status = @Status;";
+                string queryString = "SELECT Orders.order_id, Users.username as waiter, Customer.name as customer, FoodItem.name as food, Orders.price, Orders.status FROM Orders INNER JOIN Users ON Orders.waiter = Users.user_id INNER JOIN Customer ON Orders.customer = Customer.customer_id INNER JOIN FoodItem ON Orders.food_item = FoodItem.food_id  WHERE Orders.customer = @Customer AND Orders.status = @Status OR Orders.status = @Status2;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Customer", Session.CustomerId);
                 com.Parameters.AddWithValue("@Status", "InProgress");
+                com.Parameters.AddWithValue("@Status2", "Prepared");
                 SqlDataReader reader = com.ExecuteReader();
                 dt.Load(reader);
                 return dt;
@@ -71,10 +72,12 @@ namespace Restaurant_Ordering_System.DL
             try
             {
                 dbcon.Con.Open();
-                string queryString = "UPDATE Orders SET status = @Status WHERE order_id = @Orderid;";
+                string queryString = "UPDATE Orders SET status = @Status WHERE customer=@Customer AND status != @Status1 AND status != @status2;";
                 SqlCommand com = new SqlCommand(queryString, dbcon.Con);
                 com.Parameters.AddWithValue("@Status", odto.Status);
-                com.Parameters.AddWithValue("@Orderid", odto.OrderId);
+                com.Parameters.AddWithValue("@Customer", Session.CustomerId);
+                com.Parameters.AddWithValue("@Status1", odto.Status);
+                com.Parameters.AddWithValue("@Status2", "Served");
                 int rowAffected = com.ExecuteNonQuery();
                 return rowAffected;
             }

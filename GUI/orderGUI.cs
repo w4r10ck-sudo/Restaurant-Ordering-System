@@ -184,5 +184,55 @@ namespace Restaurant_Ordering_System.GUI
                 new outputFormGUI("Please insert atleast one fooditem!\nOR\nSelect a customer having cart items!").ShowDialog();
             }
         }
+
+        private void btn_cancel_order_Click(object sender, EventArgs e)
+        {
+            if (ordersGridView.RowCount > 0)
+            {
+                odto.Status = "Cancelled";
+                try
+                {
+                    obl.updateOrder(odto).ShowDialog();
+                    loadCartnOrders();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                new outputFormGUI("Please place atleast one order!\nOR\nSelect a customer having Orders!").ShowDialog();
+            }
+        }
+
+        private void btn_serve_order_Click(object sender, EventArgs e)
+        {
+            if (ordersGridView.RowCount > 0)
+            {
+                if (ordersGridView.CurrentRow.Cells[5].Value.ToString() == "Prepared")
+                {
+                    odto.Status = "Served";
+                    try
+                    {
+                        obl.updateOrder(odto).ShowDialog();
+
+                        loadCartnOrders();
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    new outputFormGUI("Order is not prepared yet!").ShowDialog();
+                }
+            }
+            else
+            {
+                new outputFormGUI("Please place atleast one order!\nOR\nSelect a customer having Orders!").ShowDialog();
+            }
+        }
     }
 }
