@@ -15,9 +15,11 @@ namespace Restaurant_Ordering_System.BL
     class adminBL
     {
         adminDL admindl = new adminDL();
+        EncryptorDecryptorBL edbl = new EncryptorDecryptorBL();
         public Form createUser(userDTO userdto)
         {
             userdto.Role = userdto.Role.ToLower();
+            userdto.Password = edbl.EncryptData(userdto.Password);
             try
             {
                 admindl.createruserinDB(userdto);
@@ -28,7 +30,6 @@ namespace Restaurant_Ordering_System.BL
                 throw ex;
 
             }
-            return new outputFormGUI("Something went wrong!");
         }
         public DataTable getAllUsers()
         {
@@ -42,7 +43,6 @@ namespace Restaurant_Ordering_System.BL
             {
                 throw ex;
             }
-            return null;
         }
         public userDTO getAdminData()
         {
@@ -56,7 +56,6 @@ namespace Restaurant_Ordering_System.BL
             {
                 throw ex;
             }
-            return null;
         }
         public Form updateUser(userDTO udto)
         {
@@ -77,7 +76,6 @@ namespace Restaurant_Ordering_System.BL
             {
                 throw ex;
             }
-            return new outputFormGUI("Something went wrong!");
         }
         public userDTO finduser(userDTO udto)
         {
@@ -90,7 +88,6 @@ namespace Restaurant_Ordering_System.BL
             {
                 throw ex;
             }
-            return null;
         }
         public void block_unblock_user(userDTO udto)
         {

@@ -65,7 +65,7 @@
     <Compile Include="BL\cartBL.cs" />
     <Compile Include="BL\categoryBL.cs" />
     <Compile Include="BL\customerBL.cs" />
-    <Compile Include="BL\EncryptorDecryptor.cs" />
+    <Compile Include="BL\EncryptorDecryptorBL.cs" />
     <Compile Include="BL\foodItemBL.cs" />
     <Compile Include="BL\loginBL.cs" />
     <Compile Include="BL\managerBL.cs" />

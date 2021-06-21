@@ -17,13 +17,14 @@ namespace Restaurant_Ordering_System
 {
     public partial class Form1 : Form
     {
-        loginDTO logindto = new loginDTO();
-        loginBL loginbl = new loginBL();
+        loginDTO logindto;
+        loginBL loginbl;
         public Form1()
         {
             InitializeComponent();
+            logindto = new loginDTO();
+            loginbl = new loginBL();
         }
-
         private void btn_login_Click(object sender, EventArgs e)
         {
             if(!string.IsNullOrEmpty(txt_username.Text) && !string.IsNullOrEmpty(txt_password.Text))
@@ -36,10 +37,11 @@ namespace Restaurant_Ordering_System
                     {
                         loginbl.verifyUser(logindto).ShowDialog();
                     }
-                    catch (SqlException ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }                }
+                    }                
+                }
                 else
                 {
                     MessageBox.Show("Wrong username format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

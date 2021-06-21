@@ -14,10 +14,12 @@ namespace Restaurant_Ordering_System.BL
     class loginBL
     {
         loginDL logindl = new loginDL();
+        EncryptorDecryptorBL edbl = new EncryptorDecryptorBL();
         public Form verifyUser(loginDTO logindto)
         {
             try
             {
+                logindto.Password = edbl.EncryptData(logindto.Password);
                 userDTO ud = logindl.VerifyUserFromDB(logindto);
                 if (ud == null)
                 {
