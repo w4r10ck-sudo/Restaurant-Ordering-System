@@ -15,11 +15,11 @@ using System.Text.RegularExpressions;
 
 namespace Restaurant_Ordering_System
 {
-    public partial class Form1 : Form
+    public partial class loginGUI : Form
     {
         loginDTO logindto;
         loginBL loginbl;
-        public Form1()
+        public loginGUI()
         {
             InitializeComponent();
             logindto = new loginDTO();
@@ -51,6 +51,14 @@ namespace Restaurant_Ordering_System
             {
                 MessageBox.Show("Please fill both feilds!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void loginGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.MessageLoop)
+                Application.Exit();
+            else
+                Environment.Exit(1);
         }
     }
 }

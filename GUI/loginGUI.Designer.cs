@@ -1,7 +1,7 @@
 ﻿
 namespace Restaurant_Ordering_System
 {
-    partial class Form1
+    partial class loginGUI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace Restaurant_Ordering_System
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginGUI));
             this.txt_username = new System.Windows.Forms.TextBox();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,7 +85,7 @@ namespace Restaurant_Ordering_System
             this.btn_login.UseVisualStyleBackColor = true;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
-            // Form1
+            // loginGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,9 +96,11 @@ namespace Restaurant_Ordering_System
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_username);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "loginGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginGUI_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

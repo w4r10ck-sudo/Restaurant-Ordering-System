@@ -81,14 +81,7 @@ namespace Restaurant_Ordering_System.GUI
                 igui.lb_customer.Text = paymentGridView.CurrentRow.Cells[2].Value.ToString();
                 igui.lb_status.Text = paymentGridView.CurrentRow.Cells[3].Value.ToString();
                 igui.ShowDialog();
-                /*PrintPreviewDialog printDlg = igui.billprintPreviewDialog1;
-                PrintDocument printDoc = igui.billprintDocument1;
-                printDoc.DocumentName = "Invoice";
-                printDlg.Document = printDoc;
-                if (printDlg.ShowDialog() == DialogResult.OK)
-                {
-                    printDoc.Print();
-                }*/
+                
             }
             else
             {

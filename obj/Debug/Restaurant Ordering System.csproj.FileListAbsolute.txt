@@ -9,7 +9,6 @@ C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Order
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.csproj.CoreCompileInputs.cache
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.exe
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant Ordering System.pdb
-C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.Form1.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.adminGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.managerGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.outputFormGUI.resources
@@ -22,3 +21,5 @@ C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Order
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.chefGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.invoiceGUI.resources
 C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.waiterGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.loginGUI.resources
+C:\Users\Taha\source\repos\Restaurant Ordering System\obj\Debug\Restaurant_Ordering_System.GUI.splashGUI.resources

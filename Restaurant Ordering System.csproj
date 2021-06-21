@@ -163,6 +163,12 @@
     <Compile Include="GUI\paymentGUI.Designer.cs">
       <DependentUpon>paymentGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\splashGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\splashGUI.Designer.cs">
+      <DependentUpon>splashGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\waiterGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\paymentGUI.resx">
       <DependentUpon>paymentGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\splashGUI.resx">
+      <DependentUpon>splashGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\waiterGUI.resx">
       <DependentUpon>waiterGUI.cs</DependentUpon>
